@@ -31,4 +31,4 @@ jobs:
        GITHUB_TOKEN: ${{ secrets.TOKEN }}
        APK_FOLDER: android/app/build/outputs/apk/release/app-release.apk
        APP_FOLDER: android/app
-       RELEASE_TITLE: New Build v1.0.0
+       RELEASE_TITLE: New Build
