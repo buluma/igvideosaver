@@ -1,10 +1,10 @@
 ---
-name: Build & Publish Debug APK
+name: Build & Publish Release APK
 
 on:
  push:
   branches:
-   - main
+   - master
    
 jobs:
   build:
@@ -22,8 +22,10 @@ jobs:
     - name: Build Debug APK
       run: ./gradlew assembleDebug
     - name: Releasing using Hub
-      uses: ShaunLWM/action-release-debugapk@master
+      uses: yurakurets/action-release-debugapk@master
       env:
+       REPO_BRANCH: master
        GITHUB_TOKEN: ${{ secrets.TOKEN }}
-       APP_FOLDER: app
+       APK_FOLDER: android/app/build/outputs/apk/release/app-release.apk
+       APP_FOLDER: android/app
        RELEASE_TITLE: New Build
